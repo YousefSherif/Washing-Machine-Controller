@@ -1,0 +1,12 @@
+RTL design:
+1) Some signals are assigned in sequential and combinational logic: always @(posedge clk or negedge rst_n) & always @(*)
+2) timer_pause is checked in IDLE state, it should be checked only during spinning state as per description.
+3) There is no async reset in timer sequential logic: always @(posedge clk)
+4) Repeating the same code for each frequency option, it was better to MUX the timer stop value per frequency and state to reduce the code lines.
+
+Testbench:
+1) Great Testbench structure.
+2) Missing corner cases (asserting timer_pause in different states, etc..)
+
+Presentation:
+1) Excellent presentation.
